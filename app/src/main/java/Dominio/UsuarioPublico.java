@@ -56,4 +56,9 @@ public class UsuarioPublico  extends Persona{
         PerUsuarioPublico per = new PerUsuarioPublico(context);
         return per.guardar(pUp);
     }
+
+    public boolean existeUsuarioU (UsuarioPublico pUp)
+    {
+
+    }
 }
