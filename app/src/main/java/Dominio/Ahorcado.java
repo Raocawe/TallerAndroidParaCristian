@@ -81,4 +81,10 @@ public class Ahorcado {
         Palabra pp = new Palabra();
         return pp.ModificarPalabra(p);
     }
+
+    public boolean ExistePalabra(Palabra p)
+    {
+        Palabra pp = new Palabra();
+        return pp.existePalabra(p);
+    }
 }

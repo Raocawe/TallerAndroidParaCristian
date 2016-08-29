@@ -81,4 +81,10 @@ public class Palabra {
         PerPalabra pp = new PerPalabra(context);
         return pp.ModificarPalabra(p);
     }
+
+    public boolean existePalabra(Palabra p)
+    {
+        PerPalabra pp = new PerPalabra(context);
+        return pp.existePalabra(p);
+    }
 }

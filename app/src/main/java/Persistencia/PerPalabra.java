@@ -60,4 +60,18 @@ public class PerPalabra extends SqlLite {
         }
         return retorno;
     }
+
+    public boolean existePalabra(Palabra p)
+    {
+        boolean existe = false;
+        //Lo retornado se asigna al cursor que se encuantra en SQLite
+        this.seleccionar("SELECT * FROM Palabra "+ "where NombreP = '"+ p.getNombreP() + "'");
+        while(this.c.isAfterLast() == false)
+        {
+            existe = true;
+            this.c.moveToNext();
+        }
+        this.c.close();
+        return existe;
+    }
 }
