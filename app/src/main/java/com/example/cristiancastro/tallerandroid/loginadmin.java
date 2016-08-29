@@ -7,7 +7,7 @@ public class loginadmin extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);d
         setContentView(R.layout.activity_loginadmin);
     }
 }
