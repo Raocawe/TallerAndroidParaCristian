@@ -7,16 +7,25 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.cristiancastro.tallerandroid.loginadmin">
+    tools:context="com.example.cristiancastro.tallerandroid.loginadmin"
+    android:id="@+id/sss">
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Cº"
-        android:id="@+id/textView"
-        android:layout_marginTop="50dp"
+        android:text="Crear Palabras"
+        android:id="@+id/btnCrearPalabras"
+        android:layout_marginTop="85dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="128dp" />
+        android:layout_centerHorizontal="true"
+        android:onClick="CrearPalabra" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actualizar Palabras"
+        android:id="@+id/btnActualizarPalabras"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="Modificaralabra"/>
 </RelativeLayout>
