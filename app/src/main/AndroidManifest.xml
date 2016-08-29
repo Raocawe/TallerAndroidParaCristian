@@ -22,7 +22,9 @@
         <activity android:name=".inicio" />
         <activity android:name=".mejorespuntajesusuario" />
         <activity android:name=".mejorespuntajescelular" />
-        <activity android:name=".loginadmin"></activity>
+        <activity android:name=".loginadmin" />
+        <activity android:name=".agregarpalabra" />
+        <activity android:name=".modificarpalabra"></activity>
     </application>
 
 </manifest>
