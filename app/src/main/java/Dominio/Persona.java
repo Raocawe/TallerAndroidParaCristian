@@ -10,7 +10,7 @@ public class Persona {
     private String ApellidoU;
 
     public Persona(String pUsuarioU, String pContraseñaU, String pNombreU, String pApellidoU) {
-        this.ApellidoU = pApellidoU;
+        this.UsuarioU = pUsuarioU;
         this.ContraseñaU = pContraseñaU;
         this.NombreU = pNombreU;
         this.ApellidoU = pApellidoU;

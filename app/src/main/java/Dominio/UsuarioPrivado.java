@@ -1,10 +1,13 @@
 package Dominio;
+import android.content.Context;
 
+import Persistencia.PerUsuarioPrivado;
 /**
  * Created by cristian castro on 04/08/2016.
  */
 public class UsuarioPrivado extends Persona {
     private int IdUPRIV;
+    public Context context;
 
     public int getIdUPRIV() {
         return IdUPRIV;
@@ -20,6 +23,10 @@ public class UsuarioPrivado extends Persona {
     }
     public UsuarioPrivado(){}
 
-
+    public UsuarioPrivado SeleccionarEspecifica(UsuarioPrivado up)
+    {
+        PerUsuarioPrivado Pp = new PerUsuarioPrivado(context);
+        return Pp.SeleccionarEspecifica(up);
+    }
 
 }

@@ -1,12 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.cristiancastro.tallerandroid.Maininicio">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"  android:padding="20dip">
 
-</RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Login"
+        android:id="@+id/textView3"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText android:id="@+id/txtUsuario"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Usuario" />
+
+    <EditText android:id="@+id/txtContraseña"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_marginTop="15dip"
+        android:layout_marginBottom="30dip" />
+
+
+    <Button android:id="@+id/btnLogin"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="enviar"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:onClick="Enviar"
+        />
+
+    <TextView android:id="@+id/IraRegistro"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dip"
+        android:layout_marginBottom="40dip"
+        android:text="registrate!"
+        android:gravity="center"
+        android:textSize="20dip"
+        android:textColor="#0b84aa"
+        android:onClick="Registro"
+        />
+
+    <TextView android:id="@+id/login_error"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dip"
+        android:layout_marginBottom="40dip"
+        android:gravity="center"
+        android:textSize="20dip"
+        android:textColor="#0b84aa"/>
+</LinearLayout>

@@ -17,7 +17,7 @@ public class PerUsuarioPublico extends SqlLite{
     {
         boolean retorno = false;
         if(up != null) {
-            this.ejecutarSentencia("INSERT INTO UsuarioPublico (EmailUP,NacionalidadUP,ApellidoU,ContraseñaU, NombreU, UsuarioU. EdadUP) " + "VALUES " +
+            this.ejecutarSentencia("INSERT INTO UsuarioPublico (EmailUP,NacionalidadUP,ApellidoU,ContraseñaU, NombreU, UsuarioU, EdadUP) " + "VALUES " +
                     "('" + up.getEmailUP() + "', '" + up.getNacionalidadUP() + "', '" + up.getApellidoU() + "', '" + up.getContraseña()
                     + "', '" + up.getNombreU() + "', '" + up.getUsuarioU() + "', '" + up.getEdadUP() + "')");
             retorno = true;
@@ -44,14 +44,37 @@ public class PerUsuarioPublico extends SqlLite{
         if(this.c.isAfterLast() == false)
         {
             retorno = new UsuarioPublico();
-            retorno.setApellidoU(c.getString(0));
-            retorno.setNombreU(c.getString(1));
-            retorno.setContraseñaU(c.getString(2));
-            retorno.setUsuarioU(c.getString(3));
-            retorno.setIdUP(c.getInt(4));
-            retorno.setEdadUP(c.getInt(5));
-            retorno.setEmailUP(c.getString(6));
-            retorno.setNacionalidadUP(c.getString(7));
+            retorno.setApellidoU(c.getString(2));
+            retorno.setNombreU(c.getString(4));
+            retorno.setContraseñaU(c.getString(3));
+            retorno.setUsuarioU(c.getString(5));
+            retorno.setIdUP(c.getInt(7));
+            retorno.setEdadUP(c.getInt(6));
+            retorno.setEmailUP(c.getString(0));
+            retorno.setNacionalidadUP(c.getString(1));
+        }
+        else
+        {
+            retorno = null;
+        }
+        this.c.close();
+        return retorno;
+    }
+    public UsuarioPublico SeleccionarEspecificaPorId(UsuarioPublico up)
+    {
+        UsuarioPublico retorno;
+        this.seleccionar("SELECT * FROM UsuarioPublico "+ "where IdUP = '"+ up.getIdUP() + "'");
+        if(this.c.isAfterLast() == false)
+        {
+            retorno = new UsuarioPublico();
+            retorno.setApellidoU(c.getString(2));
+            retorno.setNombreU(c.getString(4));
+            retorno.setContraseñaU(c.getString(3));
+            retorno.setUsuarioU(c.getString(5));
+            retorno.setIdUP(c.getInt(7));
+            retorno.setEdadUP(c.getInt(6));
+            retorno.setEmailUP(c.getString(0));
+            retorno.setNacionalidadUP(c.getString(1));
         }
         else
         {

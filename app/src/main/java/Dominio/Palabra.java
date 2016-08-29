@@ -1,5 +1,9 @@
 package Dominio;
 
+import android.content.Context;
+
+import java.util.ArrayList;
+import Persistencia.PerPalabra;
 /**
  * Created by cristian castro on 04/08/2016.
  */
@@ -9,6 +13,7 @@ public class Palabra {
     private String DescripcionP;
     private int Nivel;
     private String ReferenciaP;
+    public Context context;
 
     public Palabra(int pIdP,String pNombreP,String pDescripcionP,int pNivel,String pReferenciaP)
     {
@@ -61,4 +66,19 @@ public class Palabra {
         Nivel = nivel;
     }
 
+    public boolean guardar(Palabra p)
+    {
+        PerPalabra pp = new PerPalabra(context);
+        return pp.guardar(p);
+    }
+    public ArrayList<Palabra> SeleccionarPorNivel(String x)
+    {
+        PerPalabra pp = new PerPalabra(context);
+        return pp.SeleccionarPorNivel(x);
+    }
+    public boolean ModificarPalabra(Palabra p)
+    {
+        PerPalabra pp = new PerPalabra(context);
+        return pp.ModificarPalabra(p);
+    }
 }

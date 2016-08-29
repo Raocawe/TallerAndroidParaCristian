@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cristiancastro.tallerandroid">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".partidaActivity" />
-        <activity android:name=".registroActivity" ></activity>
+        <activity android:name=".registroActivity" />
+        <activity android:name=".inicio" />
+        <activity android:name=".mejorespuntajesusuario" />
+        <activity android:name=".mejorespuntajescelular"></activity>
     </application>
 
 </manifest>

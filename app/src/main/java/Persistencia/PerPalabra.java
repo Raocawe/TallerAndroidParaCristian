@@ -15,11 +15,17 @@ public class PerPalabra extends SqlLite {
         super(contexto);
     }
 
-    public void guardar(Palabra p)
+    public boolean guardar(Palabra p)
     {
-        this.ejecutarSentencia("INSERT INTO Palabra (NombreP,DescripcionP,Nivel,ReferenciaP) "+ "VALUES " +
-                "('"+ p.getNombreP()+"', '"+ p.getDescripcionP() +"', "+ p.getNivel() +", '"+ p.getReferenciaP()+"')");
+        boolean retorno = false;
+        if(p != null) {
+            this.ejecutarSentencia("INSERT INTO Palabra (NombreP,DescripcionP,Nivel,ReferenciaP) " + "VALUES " +
+                    "('" + p.getNombreP() + "', '" + p.getDescripcionP() + "', " + p.getNivel() + ", '" + p.getReferenciaP() + "')");
+        retorno = true;
+        }
+        return retorno;
     }
+
     public ArrayList<Palabra> SeleccionarPorNivel(String x)
     {
         Palabra palabra;
@@ -29,11 +35,11 @@ public class PerPalabra extends SqlLite {
         while(this.c.isAfterLast() == false)
         {
             palabra = new Palabra();
-            palabra.setIdP(c.getInt(0));
-            palabra.setNombreP(c.getString(1));
-            palabra.setDescripcionP(c.getString(2));
-            palabra.setNivel(c.getInt(3));
-            palabra.setReferenciaP(c.getString(4));
+            palabra.setIdP(c.getInt(4));
+            palabra.setNombreP(c.getString(0));
+            palabra.setDescripcionP(c.getString(1));
+            palabra.setNivel(c.getInt(2));
+            palabra.setReferenciaP(c.getString(3));
             Palabras.add(palabra);
             this.c.moveToNext();
         }

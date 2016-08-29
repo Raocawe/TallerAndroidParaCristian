@@ -15,9 +15,14 @@ public class PerPartida extends SqlLite{
     public PerPartida(Context contexto) {
         super(contexto);
     }
-    public void guardar(Partida p)
+    public boolean guardar(Partida p)
     {
-        this.ejecutarSentencia("INSERT INTO Partida (IdUP,PuntajePartida,FechaPartidaN) VALUES ('"+p.getIdUP()+"', '"+ p.getPuntajePartida()+"', '"+p.getFechaPartidaN()+"')");
+        boolean retorno = false;
+        if(p != null) {
+            this.ejecutarSentencia("INSERT INTO Partida (IdUP,PuntajePartida,FechaPartidaN) VALUES (" + p.getIdUP() + ", " + p.getPuntajePartida() + ", '" + p.getFechaPartidaN() + "')");
+            retorno = true;
+        }
+        return retorno;
     }
     public Partida SeleccionarEspecificas(String x) throws ParseException {
         Partida partida;
@@ -26,10 +31,10 @@ public class PerPartida extends SqlLite{
         {
             partida = new Partida();
             SimpleDateFormat formato = new SimpleDateFormat("yyyy/mm/dd hh:mm:ss");
-            partida.setFechaPartidaN(formato.parse(c.getString(3)));
-            partida.setIdUP(c.getInt(1));
-            partida.setIdPartida(c.getInt(0));
-            partida.setPuntajePartida(c.getInt(2));
+            partida.setFechaPartidaN(formato.parse(c.getString(2)));
+            partida.setIdUP(c.getInt(0));
+            partida.setIdPartida(c.getInt(3));
+            partida.setPuntajePartida(c.getInt(1));
             this.c.moveToNext();
         }
         else
@@ -49,9 +54,10 @@ public class PerPartida extends SqlLite{
         {
             Partida = new Partida();
             SimpleDateFormat formato = new SimpleDateFormat("yyyy/mm/dd hh:mm:ss");
-            Partida.setFechaPartidaN(formato.parse(c.getString(3)));
-            Partida.setIdUP(c.getInt(1));
-            Partida.setIdPartida(c.getInt(0));
+            Partida.setFechaPartidaN(formato.parse(c.getString(2)));
+            Partida.setIdUP(c.getInt(0));
+            Partida.setIdPartida(c.getInt(3));
+            Partida.setPuntajePartida(c.getInt(1));
             Partidas.add(Partida);
             this.c.moveToNext();
         }

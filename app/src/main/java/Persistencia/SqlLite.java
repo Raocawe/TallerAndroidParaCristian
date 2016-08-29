@@ -17,9 +17,9 @@ import java.io.OutputStream;
  */
 public class SqlLite extends SQLiteOpenHelper {//Extiende para poder gestionar la BDD
     //Ruta a la localización de la BDÐ
-    private static String BDD_RUTA = "/data/data/com.example.cristiancastro.tallerandroid/databases/";
+    private static String BDD_RUTA = "/data/data/com.example.cristiancastro.tallerandroid/database/";
     //Nombre de la BDD para acceder a la misma
-    private static String BDD_NOMBRE = "Ahorcado";
+    private static String BDD_NOMBRE = "bd_ahorcado.sqlite";
     //Para almacenar nuestra BDD en memoria
     private SQLiteDatabase miBdd; //
     private Context miContexto;
@@ -59,8 +59,8 @@ public class SqlLite extends SQLiteOpenHelper {//Extiende para poder gestionar l
         }
         catch (SQLiteException e)
         {
-            throw e;
         }
+
         if(checkDB != null)
         {
             checkDB.close();
@@ -70,19 +70,26 @@ public class SqlLite extends SQLiteOpenHelper {//Extiende para poder gestionar l
     }
     private void copiarBaseDatos() throws IOException
     {
-        InputStream myInput = miContexto.getAssets().open(BDD_NOMBRE);
-        String outFlieName = BDD_RUTA + BDD_NOMBRE;
-        OutputStream myOutput = new FileOutputStream(outFlieName);
-        byte[] buffer = new byte[1024];
-        int length;
-        while ((length = myInput.read(buffer))>0)
+        try
         {
-            myOutput.write(buffer,0,length);
-        }
-        myOutput.flush();
-        myOutput.close();
-        myInput.close();
+            InputStream myInput = miContexto.getAssets().open(BDD_NOMBRE);
+            String outFlieName = BDD_RUTA + BDD_NOMBRE;
+            OutputStream myOutput = new FileOutputStream(outFlieName);
 
+            byte[] buffer = new byte[1024];
+            int length;
+            while ((length = myInput.read(buffer))>0)
+            {
+                myOutput.write(buffer,0,length);
+            }
+            myOutput.flush();
+            myOutput.close();
+            myInput.close();
+        }
+        catch (IOException e)
+        {
+            throw e;
+        }
     }
     //Abre la base de datps àra la lectura de tuplas.
     public void abrirBaseDatos() throws SQLException
@@ -102,6 +109,7 @@ public class SqlLite extends SQLiteOpenHelper {//Extiende para poder gestionar l
         super.close();
     }
     //Se implementa para no desarrollar este código en cada clase en la que se desea selecccionar algo de BDD
+
     public void seleccionar(String sql)
     {
         this.abrirBaseDatos();
@@ -133,11 +141,11 @@ public class SqlLite extends SQLiteOpenHelper {//Extiende para poder gestionar l
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+    public void onCreate(SQLiteDatabase db) {
 
     }
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
 

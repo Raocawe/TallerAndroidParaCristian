@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent" android:padding="20dip" android:orientation="vertical"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="."
+        android:id="@+id/lblBienvenida"
+        android:layout_gravity="center_horizontal" />
+
+    <Button android:id="@+id/btnJugar" android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:text="Jugar"
+        android:layout_gravity="center_horizontal" android:paddingLeft="15dip" android:paddingRight="15dip"
+        android:layout_marginTop="10dp"
+        android:onClick="Jugar"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mejores Putajes Uuario"
+        android:id="@+id/btnMPU"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:onClick="MPU"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mejores Puntajes del Cel"
+        android:id="@+id/btnMPC"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:onClick="MPC"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:id="@+id/btnSalir"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:onClick="Salir"
+        />
+
+
+</LinearLayout>

@@ -1,5 +1,8 @@
 package Dominio;
 import android.content.Context;
+
+import java.util.ArrayList;
+
 import Persistencia.PerUsuarioPublico;
 
 public class UsuarioPublico  extends Persona{
@@ -59,6 +62,25 @@ public class UsuarioPublico  extends Persona{
 
     public boolean existeUsuarioU (UsuarioPublico pUp)
     {
+        PerUsuarioPublico per = new PerUsuarioPublico(context);
+        return  per.existeUsuarioU(pUp.getUsuarioU());
+    }
 
+    public UsuarioPublico SeleccionarEspecifica(UsuarioPublico up)
+    {
+        PerUsuarioPublico per = new PerUsuarioPublico(context);
+        return per.SeleccionarEspecifica(up);
+    }
+
+    public ArrayList<UsuarioPublico> UsuarioPublicos()
+    {
+        PerUsuarioPublico per = new PerUsuarioPublico(context);
+        return per.UsuarioPublicos();
+    }
+
+    public UsuarioPublico SeleccionarEspecificaPorId(UsuarioPublico up)
+    {
+        PerUsuarioPublico per = new PerUsuarioPublico(context);
+        return  per.SeleccionarEspecificaPorId(up);
     }
 }

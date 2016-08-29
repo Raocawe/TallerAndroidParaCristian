@@ -2,21 +2,18 @@ package com.example.cristiancastro.tallerandroid;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Window;
 
 import Dominio.Ahorcado;
 import Dominio.UsuarioPublico;
 
-public class partidaActivity extends AppCompatActivity {
+public class mejorespuntajescelular extends AppCompatActivity {
 
     Bundle b;
     UsuarioPublico u;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_partida);
+        setContentView(R.layout.activity_mejorespuntajescelular);
 
         b = getIntent().getExtras();
         Ahorcado aho = new Ahorcado();

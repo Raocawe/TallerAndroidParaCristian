@@ -16,15 +16,15 @@ public class PerUsuarioPrivado extends SqlLite{
     public UsuarioPrivado SeleccionarEspecifica(UsuarioPrivado up)
     {
         UsuarioPrivado retorno;
-        this.seleccionar("SELECT * FROM UsuarioPublico "+ "where UsuarioU = '"+ up.getUsuarioU() + "' and ContraseñaU = '"+ up.getContraseña()+"'");
+        this.seleccionar("SELECT * FROM UsuarioPrivado "+ "where UsuarioU = '"+ up.getUsuarioU() + "' and ContraseñaU = '"+ up.getContraseña()+"'");
         if(this.c.isAfterLast() == false)
         {
             retorno = new UsuarioPrivado();
-            retorno.setApellidoU(c.getString(4));
-            retorno.setNombreU(c.getString(3));
-            retorno.setContraseñaU(c.getString(2));
-            retorno.setUsuarioU(c.getString(1));
-            retorno.setIdUPRIV(c.getInt(0));
+            retorno.setApellidoU(c.getString(3));
+            retorno.setNombreU(c.getString(2));
+            retorno.setContraseñaU(c.getString(1));
+            retorno.setUsuarioU(c.getString(0));
+            retorno.setIdUPRIV(c.getInt(4));
         }
         else
         {
