@@ -32,17 +32,17 @@ public class registroActivity extends AppCompatActivity {
             Ahorcado ahorcado = new Ahorcado();
             UsuarioPublico up = new UsuarioPublico();
 
-            up.setUsuarioU(Usuario.toString());
+            up.setUsuarioU(Usuario.getText().toString());
 
             if (ahorcado.existeUsuarioUsuarioPublico(up)) {
                 Toast.makeText(getApplicationContext(), "Ya existe ese Usuario", Toast.LENGTH_SHORT).show();
             } else {
-                up.setNacionalidadUP(Nacionalidad.toString());
-                up.setEmailUP(Email.toString());
-                up.setNombreU(Nombre.toString());
-                up.setContraseñaU(Contraseña.toString());
-                up.setApellidoU(Apellido.toString());
-                up.setEdadUP(Integer.parseInt(Edad.toString()));
+                up.setNacionalidadUP(Nacionalidad.getText().toString());
+                up.setEmailUP(Email.getText().toString());
+                up.setNombreU(Nombre.getText().toString());
+                up.setContraseñaU(Contraseña.getText().toString());
+                up.setApellidoU(Apellido.getText().toString());
+                up.setEdadUP(Integer.parseInt(Edad.getText().toString()));
 
                 ahorcado.guardarUsuarioPublico(up);
                 Toast.makeText(getApplicationContext(), "Usuario Agregado", Toast.LENGTH_SHORT).show();
