@@ -17,7 +17,7 @@ import java.io.OutputStream;
  */
 public class SqlLite extends SQLiteOpenHelper {//Extiende para poder gestionar la BDD
     //Ruta a la localización de la BDÐ
-    private static String BDD_RUTA = "/data/data/com.example.cristiancastro.tallerandroid/database/";
+    private static String BDD_RUTA = "/data/data/com.example.cristiancastro.tallerandroid/databases/";
     //Nombre de la BDD para acceder a la misma
     private static String BDD_NOMBRE = "bd_ahorcado.sqlite";
     //Para almacenar nuestra BDD en memoria
