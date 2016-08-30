@@ -53,7 +53,7 @@ public class registroActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Completar todos los campos", Toast.LENGTH_SHORT).show();
         }
     }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////7
     public boolean ValidarCampos()
     {
         TextView Nombre = (TextView) findViewById(R.id.txtNombre);

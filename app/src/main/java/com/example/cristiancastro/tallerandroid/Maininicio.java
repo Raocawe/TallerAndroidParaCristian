@@ -45,8 +45,8 @@ public class Maininicio extends AppCompatActivity {
         Ahorcado ahorcado = new Ahorcado();
         UsuarioPublico up = new UsuarioPublico();
 
-        up.setContraseñaU(Contraseña.toString());
-        up.setUsuarioU(Usuario.toString());
+        up.setContraseñaU(Contraseña.getText().toString());
+        up.setUsuarioU(Usuario.getText().toString());
 
         up = ahorcado.SeleccionarEspecificaUsuarioPublico(up);
 
