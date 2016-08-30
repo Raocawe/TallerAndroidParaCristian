@@ -50,7 +50,7 @@ public class registroActivity extends AppCompatActivity {
                 ahorcado.guardarUsuarioPublico(up,Micontext);
                 Toast.makeText(getApplicationContext(), "Usuario Agregado", Toast.LENGTH_SHORT).show();
             }
-        }
+        }//
         else
         {
             Toast.makeText(getApplicationContext(), "Completar todos los campos", Toast.LENGTH_SHORT).show();
