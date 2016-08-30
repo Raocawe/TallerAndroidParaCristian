@@ -72,7 +72,10 @@ public class Maininicio extends AppCompatActivity {
 
     public boolean ValidarEntrada()
     {
-        return (findViewById(R.id.txtUsuario).toString() != "" && findViewById(R.id.txtContraseña).toString()!= "");
+        TextView Usuario = (TextView) findViewById(R.id.txtUsuario);
+        TextView Contraseña = (TextView) findViewById(R.id.txtContraseña);
+
+        return !Usuario.getText().toString().isEmpty() && !Contraseña.getText().toString().isEmpty();
     }
 
 }

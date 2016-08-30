@@ -17,14 +17,14 @@
         android:id="@+id/imageButton"
         android:layout_gravity="center_horizontal"
         android:onClick="Jugar"
-        android:src="@drawable/Jugar" />
+        android:src="@drawable/jugar" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageButton2"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/MPU"
+        android:src="@drawable/mpu"
         android:onClick="MPU"
         android:layout_marginTop="20dp" />
 
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageButton4"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/Salir"
+        android:src="@drawable/salir"
         android:layout_marginTop="20dp" />
 
 

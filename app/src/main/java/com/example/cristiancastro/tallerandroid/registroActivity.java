@@ -56,7 +56,17 @@ public class registroActivity extends AppCompatActivity {
 
     public boolean ValidarCampos()
     {
-        return (findViewById(R.id.txtNombre).toString() != "" && findViewById(R.id.txtPass).toString() != "" && findViewById(R.id.txtUsuario).toString() != "" &&
-                findViewById(R.id.txtApellido).toString() != "" && findViewById(R.id.txtEdad).toString() != "" && findViewById(R.id.txtEmail).toString() != "" && findViewById(R.id.txtNacionalidad).toString() != "");
+        TextView Nombre = (TextView) findViewById(R.id.txtNombre);
+        TextView Contraseña = (TextView) findViewById(R.id.txtPass);
+        TextView Usuario = (TextView) findViewById(R.id.txtUsuario);
+        TextView Apellido = (TextView) findViewById(R.id.txtApellido);
+        TextView Edad = (TextView) findViewById(R.id.txtEdad);
+        TextView Email = (TextView) findViewById(R.id.txtEmail);
+        TextView Nacionalidad = (TextView) findViewById(R.id.txtNacionalidad);
+
+        return !Nombre.getText().toString().isEmpty() && !Contraseña.getText().toString().isEmpty()
+                && !Usuario.getText().toString().isEmpty() && !Apellido.getText().toString().isEmpty()
+                && !Edad.getText().toString().isEmpty() && !Email.getText().toString().isEmpty()
+                && !Nacionalidad.getText().toString().isEmpty();
     }
 }
