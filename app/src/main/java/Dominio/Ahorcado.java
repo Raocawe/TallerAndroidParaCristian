@@ -14,7 +14,7 @@ public class Ahorcado {
 
     public Ahorcado(){}
 
-    // USUARIO PUBLICOaa
+    // USUARIO PUBLICO
     public boolean existeUsuarioUsuarioPublico (UsuarioPublico pUp, Context pContext)
     {
         UsuarioPublico up = new UsuarioPublico();
