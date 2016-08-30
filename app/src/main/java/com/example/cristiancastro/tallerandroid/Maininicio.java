@@ -8,19 +8,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import Dominio.Ahorcado;
 import Dominio.UsuarioPublico;
-import Persistencia.PerUsuarioPublico;
 import Persistencia.SqlLite;
 
 public class Maininicio extends AppCompatActivity {
 
     Context MiContext;
-    PerUsuarioPublico pp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +38,7 @@ public class Maininicio extends AppCompatActivity {
         }
     }
 
-    public void Enviar(View v)//SYC :D
+    public void Enviar(View v)
     {
         if(ValidarEntrada())
         {
@@ -51,7 +48,7 @@ public class Maininicio extends AppCompatActivity {
         UsuarioPublico up = new UsuarioPublico();
 
         up.setContraseñaU(Contraseña.toString());
-        up.setUsuarioU(Usuario.toString());
+        up.setUsuarioU(Usuario.getText().toString());
 
         up = ahorcado.SeleccionarEspecificaUsuarioPublico(up,MiContext);
 
@@ -77,7 +74,10 @@ public class Maininicio extends AppCompatActivity {
 
     public boolean ValidarEntrada()
     {
+        TextView Usuario = (TextView) findViewById(R.id.txtUsuario);
+        TextView Contraseña = (TextView) findViewById(R.id.txtContraseña);
 
+        return !Usuario.getText().toString().isEmpty() && !Contraseña.getText().toString().isEmpty();
     }
 
 }

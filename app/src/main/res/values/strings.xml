@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TallerAndroid</string>
+    <string name="boton_mpu">Boton MPU</string>
 </resources>

@@ -11,43 +11,39 @@
         android:id="@+id/lblBienvenida"
         android:layout_gravity="center_horizontal" />
 
-    <Button android:id="@+id/btnJugar" android:layout_height="wrap_content"
-        android:layout_width="196dp" android:text="Jugar"
-        android:layout_gravity="center_horizontal" android:paddingLeft="15dip" android:paddingRight="15dip"
-        android:layout_marginTop="10dp"
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:layout_gravity="center_horizontal"
         android:onClick="Jugar"
-        android:layout_weight="0.19"
-        android:background="@drawable/abc_btn_radio_material" />
+        android:src="@drawable/jugar" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mejores Putajes Uuario"
-        android:id="@+id/btnMPU"
+        android:id="@+id/imageButton2"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
+        android:src="@drawable/mpu"
         android:onClick="MPU"
-        />
+        android:layout_marginTop="20dp" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mejores Puntajes del Cel"
-        android:id="@+id/btnMPC"
+        android:id="@+id/imageButton3"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
+        android:src="@drawable/button"
         android:onClick="MPC"
-        />
+        android:layout_marginTop="20dp" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Salir"
-        android:id="@+id/btnSalir"
+        android:id="@+id/imageButton4"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:onClick="Salir"
-        />
+        android:src="@drawable/salir"
+        android:layout_marginTop="20dp" />
 
 
 </LinearLayout>
