@@ -57,21 +57,21 @@ public class Partida {
         FechaPartidaN = fechaPartidaN;
     }
 
-    public boolean guardar(Partida p)
+    public boolean guardar(Partida p,Context pContext)
     {
-        PerPartida pp = new PerPartida(context);
+        PerPartida pp = new PerPartida(pContext);
         return pp.guardar(p);
     }
 
-    public Partida SeleccionarEspecificas(String x) throws ParseException
+    public Partida SeleccionarEspecificas(String x,Context pContext) throws ParseException
     {
-        PerPartida pp = new PerPartida(context);
+        PerPartida pp = new PerPartida(pContext);
         return pp.SeleccionarEspecificas(x);
     }
 
-    public ArrayList<Partida> Partidas() throws ParseException
+    public ArrayList<Partida> Partidas(Context pContext) throws ParseException
     {
-        PerPartida pp = new PerPartida(context);
+        PerPartida pp = new PerPartida(pContext);
         return pp.Partidas();
     }
 }

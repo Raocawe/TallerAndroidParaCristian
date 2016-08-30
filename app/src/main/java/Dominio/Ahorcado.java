@@ -1,5 +1,7 @@
 package Dominio;
 
+import android.content.Context;
+
 import java.text.ParseException;
 import java.util.ArrayList;
 
@@ -13,78 +15,78 @@ public class Ahorcado {
     public Ahorcado(){}
 
     // USUARIO PUBLICO
-    public boolean existeUsuarioUsuarioPublico (UsuarioPublico pUp)
+    public boolean existeUsuarioUsuarioPublico (UsuarioPublico pUp, Context pContext)
     {
         UsuarioPublico up = new UsuarioPublico();
-        return up.existeUsuarioU(pUp);
+        return up.existeUsuarioU(pUp,pContext);
     }
-    public boolean guardarUsuarioPublico (UsuarioPublico pUp)
+    public boolean guardarUsuarioPublico (UsuarioPublico pUp, Context pContext)
     {
         UsuarioPublico up = new UsuarioPublico();
-        return  up.guardar(pUp);
+        return  up.guardar(pUp,pContext);
     }
-    public UsuarioPublico SeleccionarEspecificaUsuarioPublico(UsuarioPublico pup)
+    public UsuarioPublico SeleccionarEspecificaUsuarioPublico(UsuarioPublico pup, Context pContext)
     {
         UsuarioPublico up = new UsuarioPublico();
-        return up.SeleccionarEspecifica(pup);
+        return up.SeleccionarEspecifica(pup,pContext);
     }
-    public ArrayList<UsuarioPublico> UsuarioPublicos()
+    public ArrayList<UsuarioPublico> UsuarioPublicos(Context pContext)
     {
         UsuarioPublico up = new UsuarioPublico();
-        return up.UsuarioPublicos();
+        return up.UsuarioPublicos(pContext);
     }
-    public UsuarioPublico SeleccionarEspecificaUsuarioPublicoPorId(UsuarioPublico pup)
+    public UsuarioPublico SeleccionarEspecificaUsuarioPublicoPorId(UsuarioPublico pup, Context pContext)
     {
         UsuarioPublico up = new UsuarioPublico();
-        return up.SeleccionarEspecificaPorId(pup);
+        return up.SeleccionarEspecificaPorId(pup,pContext);
     }
 
     //USUARIO PRIVADO
-    public UsuarioPrivado SeleccionarEspecificaUsuarioPrivado(UsuarioPrivado pUp)
+    public UsuarioPrivado SeleccionarEspecificaUsuarioPrivado(UsuarioPrivado pUp, Context pContext)
     {
         UsuarioPrivado up = new UsuarioPrivado();
-        return up.SeleccionarEspecifica(pUp);
+        return up.SeleccionarEspecifica(pUp,pContext);
     }
 
     //PARTIDA
-    public boolean guardarPartida(Partida p)
+    public boolean guardarPartida(Partida p, Context pContext)
     {
         Partida par = new Partida();
-        return par.guardar(p);
+        return par.guardar(p,pContext);
     }
-    public Partida SeleccionarEspecificasPartida(String x) throws ParseException
+    public Partida SeleccionarEspecificasPartida(String x, Context pContext) throws ParseException
     {
         Partida par = new Partida();
-        return par.SeleccionarEspecificas(x);
+        return par.SeleccionarEspecificas(x,pContext);
     }
-    public ArrayList<Partida> Partidas() throws ParseException
+    public ArrayList<Partida> Partidas(Context pContext) throws ParseException
     {
         Partida par = new Partida();
-        return par.Partidas();
+        return par.Partidas(pContext);
     }
 
     //PALABRA
-    public boolean guardarPalabra(Palabra p)
+    public boolean guardarPalabra(Palabra p, Context pContext)
     {
         Palabra pp = new Palabra();
-        return pp.guardar(p);
+        return pp.guardar(p,pContext);
     }
 
-    public ArrayList<Palabra> SeleccionarPorNivelPalabra(String x)
+    public ArrayList<Palabra> SeleccionarPorNivelPalabra(String x, Context pContext)
     {
         Palabra pp = new Palabra();
-        return pp.SeleccionarPorNivel(x);
+        return pp.SeleccionarPorNivel(x,pContext);
     }
 
-    public boolean ModificarPalabra(Palabra p)
+    public boolean ModificarPalabra(Palabra p, Context pContext)
     {
         Palabra pp = new Palabra();
-        return pp.ModificarPalabra(p);
+        return pp.ModificarPalabra(p,pContext);
     }
 
-    public boolean ExistePalabra(Palabra p)
+    public boolean ExistePalabra(Palabra p, Context pContext)
     {
         Palabra pp = new Palabra();
-        return pp.existePalabra(p);
+        return pp.existePalabra(p,pContext);
     }
 }

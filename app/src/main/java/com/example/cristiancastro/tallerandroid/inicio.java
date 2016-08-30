@@ -1,5 +1,6 @@
 package com.example.cristiancastro.tallerandroid;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,16 +16,18 @@ public class inicio extends AppCompatActivity {
 
     Bundle b;
     UsuarioPublico u;
+    Context MiContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+        MiContext = getApplicationContext();
 
         b = getIntent().getExtras();
         Ahorcado aho = new Ahorcado();
         u = new UsuarioPublico();
         u.setIdUP(b.getInt("Usuario"));
-        u = aho.SeleccionarEspecificaUsuarioPublicoPorId(u);
+        u = aho.SeleccionarEspecificaUsuarioPublicoPorId(u,MiContext);
         TextView Titulo = (TextView)findViewById(R.id.lblBienvenida);
         Titulo.setText("Bienvenido Usuario "+ u.getUsuarioU());
 

@@ -1,5 +1,6 @@
 package com.example.cristiancastro.tallerandroid;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInstaller;
 import android.database.sqlite.SQLiteDatabase;
@@ -7,20 +8,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import Dominio.Ahorcado;
 import Dominio.UsuarioPublico;
+import Persistencia.PerUsuarioPublico;
 import Persistencia.SqlLite;
 
 public class Maininicio extends AppCompatActivity {
 
+    Context MiContext;
+    PerUsuarioPublico pp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maininicio);
-        SqlLite sqlite = new SqlLite(this);
+        MiContext = getApplicationContext();
     }
 
     public void Registro(View v)
@@ -48,7 +53,7 @@ public class Maininicio extends AppCompatActivity {
         up.setContraseñaU(Contraseña.toString());
         up.setUsuarioU(Usuario.toString());
 
-        up = ahorcado.SeleccionarEspecificaUsuarioPublico(up);
+        up = ahorcado.SeleccionarEspecificaUsuarioPublico(up,MiContext);
 
             if (up != null) {
                         try {
@@ -61,18 +66,18 @@ public class Maininicio extends AppCompatActivity {
                             e.printStackTrace();
                         }
             } else {
-                Toast.makeText(getApplicationContext(), "Usuario o Contraseña Incorrecto", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MiContext, "Usuario o Contraseña Incorrecto", Toast.LENGTH_SHORT).show();
             }
         }
         else
         {
-            Toast.makeText(getApplicationContext(), "Rellene todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MiContext, "Rellene todos los campos", Toast.LENGTH_SHORT).show();
         }
     }
 
     public boolean ValidarEntrada()
     {
-        return (findViewById(R.id.txtUsuario).toString() != "" && findViewById(R.id.txtContraseña).toString()!= "");
+
     }
 
 }

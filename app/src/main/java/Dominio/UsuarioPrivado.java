@@ -23,9 +23,9 @@ public class UsuarioPrivado extends Persona {
     }
     public UsuarioPrivado(){}
 
-    public UsuarioPrivado SeleccionarEspecifica(UsuarioPrivado up)
+    public UsuarioPrivado SeleccionarEspecifica(UsuarioPrivado up,Context pContext)
     {
-        PerUsuarioPrivado Pp = new PerUsuarioPrivado(context);
+        PerUsuarioPrivado Pp = new PerUsuarioPrivado(pContext);
         return Pp.SeleccionarEspecifica(up);
     }
 

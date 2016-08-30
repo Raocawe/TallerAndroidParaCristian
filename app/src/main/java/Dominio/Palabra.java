@@ -66,25 +66,25 @@ public class Palabra {
         Nivel = nivel;
     }
 
-    public boolean guardar(Palabra p)
+    public boolean guardar(Palabra p,Context pContext)
     {
-        PerPalabra pp = new PerPalabra(context);
+        PerPalabra pp = new PerPalabra(pContext);
         return pp.guardar(p);
     }
-    public ArrayList<Palabra> SeleccionarPorNivel(String x)
+    public ArrayList<Palabra> SeleccionarPorNivel(String x,Context pContext)
     {
-        PerPalabra pp = new PerPalabra(context);
+        PerPalabra pp = new PerPalabra(pContext);
         return pp.SeleccionarPorNivel(x);
     }
-    public boolean ModificarPalabra(Palabra p)
+    public boolean ModificarPalabra(Palabra p,Context pContext)
     {
-        PerPalabra pp = new PerPalabra(context);
+        PerPalabra pp = new PerPalabra(pContext);
         return pp.ModificarPalabra(p);
     }
 
-    public boolean existePalabra(Palabra p)
+    public boolean existePalabra(Palabra p,Context pContext)
     {
-        PerPalabra pp = new PerPalabra(context);
+        PerPalabra pp = new PerPalabra(pContext);
         return pp.existePalabra(p);
     }
 }

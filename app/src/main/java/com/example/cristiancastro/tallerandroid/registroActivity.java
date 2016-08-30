@@ -1,5 +1,6 @@
 package com.example.cristiancastro.tallerandroid;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,11 +13,13 @@ import Dominio.UsuarioPublico;
 
 public class registroActivity extends AppCompatActivity {
 
+    Context Micontext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_registro);
+        Micontext = getApplicationContext();
     }
 
     public void Enviar(View e)
@@ -34,7 +37,7 @@ public class registroActivity extends AppCompatActivity {
 
             up.setUsuarioU(Usuario.toString());
 
-            if (ahorcado.existeUsuarioUsuarioPublico(up)) {
+            if (ahorcado.existeUsuarioUsuarioPublico(up,Micontext)) {
                 Toast.makeText(getApplicationContext(), "Ya existe ese Usuario", Toast.LENGTH_SHORT).show();
             } else {
                 up.setNacionalidadUP(Nacionalidad.toString());
@@ -44,7 +47,7 @@ public class registroActivity extends AppCompatActivity {
                 up.setApellidoU(Apellido.toString());
                 up.setEdadUP(Integer.parseInt(Edad.toString()));
 
-                ahorcado.guardarUsuarioPublico(up);
+                ahorcado.guardarUsuarioPublico(up,Micontext);
                 Toast.makeText(getApplicationContext(), "Usuario Agregado", Toast.LENGTH_SHORT).show();
             }
         }
@@ -56,7 +59,6 @@ public class registroActivity extends AppCompatActivity {
 
     public boolean ValidarCampos()
     {
-        return (findViewById(R.id.txtNombre).toString() != "" && findViewById(R.id.txtPass).toString() != "" && findViewById(R.id.txtUsuario).toString() != "" &&
-                findViewById(R.id.txtApellido).toString() != "" && findViewById(R.id.txtEdad).toString() != "" && findViewById(R.id.txtEmail).toString() != "" && findViewById(R.id.txtNacionalidad).toString() != "");
+
     }
 }

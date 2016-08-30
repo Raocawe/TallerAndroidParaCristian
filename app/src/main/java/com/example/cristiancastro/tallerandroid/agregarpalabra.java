@@ -1,5 +1,6 @@
 package com.example.cristiancastro.tallerandroid;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,12 +12,12 @@ import Dominio.Palabra;
 import Dominio.UsuarioPublico;
 
 public class agregarpalabra extends AppCompatActivity {
-
+    Context MiContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregarpalabra);
-
+        MiContext = getApplicationContext();
     }
 
     public void Enviar(View e)
@@ -33,10 +34,10 @@ public class agregarpalabra extends AppCompatActivity {
 
             Ahorcado ahorcado = new Ahorcado();
 
-            if (ahorcado.ExistePalabra(pal)) {
+            if (ahorcado.ExistePalabra(pal,MiContext)) {
                 Toast.makeText(getApplicationContext(), "Ya existe esa Palabra", Toast.LENGTH_SHORT).show();
             } else {
-                ahorcado.guardarPalabra(pal);
+                ahorcado.guardarPalabra(pal,MiContext);
                 Toast.makeText(getApplicationContext(), "Usuario Agregado", Toast.LENGTH_SHORT).show();
             }
         }

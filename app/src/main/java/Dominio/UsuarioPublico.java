@@ -54,33 +54,33 @@ public class UsuarioPublico  extends Persona{
         NacionalidadUP = nacionalidadUP;
     }
 
-    public boolean guardar (UsuarioPublico pUp)
+    public boolean guardar (UsuarioPublico pUp,Context pContext)
     {
-        PerUsuarioPublico per = new PerUsuarioPublico(context);
+        PerUsuarioPublico per = new PerUsuarioPublico(pContext);
         return per.guardar(pUp);
     }
 
-    public boolean existeUsuarioU (UsuarioPublico pUp)
+    public boolean existeUsuarioU (UsuarioPublico pUp,Context pContext)
     {
-        PerUsuarioPublico per = new PerUsuarioPublico(context);
+        PerUsuarioPublico per = new PerUsuarioPublico(pContext);
         return  per.existeUsuarioU(pUp.getUsuarioU());
     }
 
-    public UsuarioPublico SeleccionarEspecifica(UsuarioPublico up)
+    public UsuarioPublico SeleccionarEspecifica(UsuarioPublico up,Context pContext)
     {
-        PerUsuarioPublico per = new PerUsuarioPublico(context);
+        PerUsuarioPublico per = new PerUsuarioPublico(pContext);
         return per.SeleccionarEspecifica(up);
     }
 
-    public ArrayList<UsuarioPublico> UsuarioPublicos()
+    public ArrayList<UsuarioPublico> UsuarioPublicos(Context pContext)
     {
-        PerUsuarioPublico per = new PerUsuarioPublico(context);
+        PerUsuarioPublico per = new PerUsuarioPublico(pContext);
         return per.UsuarioPublicos();
     }
 
-    public UsuarioPublico SeleccionarEspecificaPorId(UsuarioPublico up)
+    public UsuarioPublico SeleccionarEspecificaPorId(UsuarioPublico up,Context pContext)
     {
-        PerUsuarioPublico per = new PerUsuarioPublico(context);
+        PerUsuarioPublico per = new PerUsuarioPublico(pContext);
         return  per.SeleccionarEspecificaPorId(up);
     }
 }
