@@ -16,9 +16,6 @@ import Dominio.UsuarioPublico;
 public class mejorespuntajescelular extends AppCompatActivity {
 
     Context MiContext;
-    Bundle b;
-    UsuarioPublico u;
-
     ArrayAdapter<Partida> adaptador;
     ArrayList<Partida> listaDePartidas;
 
@@ -27,12 +24,7 @@ public class mejorespuntajescelular extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mejorespuntajescelular);
         MiContext = getApplicationContext();
-
-        b = getIntent().getExtras();
         Ahorcado aho = new Ahorcado();
-        u = new UsuarioPublico();
-        u.setIdUP(b.getInt("Usuario"));
-        u = aho.SeleccionarEspecificaUsuarioPublicoPorId(u,MiContext);
 
         //CARGA LISTA A MOSTRAR
         try {

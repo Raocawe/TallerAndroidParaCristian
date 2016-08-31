@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import Dominio.Ahorcado;
 import Dominio.Palabra;
-import Dominio.UsuarioPublico;
 
 public class agregarpalabra extends AppCompatActivity {
     Context MiContext;
@@ -24,7 +23,7 @@ public class agregarpalabra extends AppCompatActivity {
     {
         if (ValidarCampos()) {
             TextView Palabra = (TextView) findViewById(R.id.txtPalabra);
-            TextView Referencia = (TextView) findViewById(R.id.txtReferencia );
+            TextView Referencia = (TextView) findViewById(R.id.lblReferencia);
             TextView Descripcion = (TextView) findViewById(R.id.txtDescripcion);
 
             Palabra pal = new Palabra();
@@ -38,7 +37,7 @@ public class agregarpalabra extends AppCompatActivity {
                 Toast.makeText(MiContext, "Ya existe esa Palabra", Toast.LENGTH_SHORT).show();
             } else {
                 ahorcado.guardarPalabra(pal,MiContext);
-                Toast.makeText(MiContext, "Usuario Agregado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MiContext, "Palabra Agregada", Toast.LENGTH_SHORT).show();
             }
         }
         else
@@ -50,7 +49,7 @@ public class agregarpalabra extends AppCompatActivity {
     public boolean ValidarCampos()
     {
         TextView Palabra = (TextView) findViewById(R.id.txtPalabra);
-        TextView Referencia = (TextView) findViewById(R.id.txtReferencia );
+        TextView Referencia = (TextView) findViewById(R.id.lblReferencia);
         TextView Descripcion = (TextView) findViewById(R.id.txtDescripcion);
 
         return (!Palabra.getText().toString().isEmpty() && !Referencia.getText().toString().isEmpty()

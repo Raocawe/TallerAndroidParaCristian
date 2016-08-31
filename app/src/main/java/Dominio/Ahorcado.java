@@ -69,6 +69,11 @@ public class Ahorcado {
         Partida par = new Partida();
         return par.TopCincoMejores(pContext);
     }
+    public ArrayList<Partida> TopCincoMejoresCelularPartidas(UsuarioPublico pU,Context pContext) throws ParseException
+    {
+        Partida par = new Partida();
+        return par.TopCincoMejoresCelular(pU,pContext);
+    }
 
     //PALABRA
     public boolean guardarPalabra(Palabra p, Context pContext)

@@ -79,5 +79,9 @@ public class Partida {
         PerPartida pp = new PerPartida(pContext);
         return pp.TopCincoMejores();
     }
-
+    public ArrayList<Partida> TopCincoMejoresCelular(UsuarioPublico pU,Context pContext) throws ParseException
+    {
+        PerPartida pp = new PerPartida(pContext);
+        return pp.TopCincoMejoresCelular(pU);
+    }
 }

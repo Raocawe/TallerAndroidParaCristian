@@ -13,37 +13,73 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Palabra a Modificar"
+        android:text="Palabra a Modificar:"
         android:id="@+id/textView5"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Nombre"
-        android:id="@+id/txtNombre"
-        android:layout_below="@+id/textView5"
+        android:text="Nombre:"
+        android:id="@+id/lblNombre"
+        android:layout_above="@+id/lblDefinicion"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="48dp" />
+        android:layout_marginBottom="69dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Definicion"
-        android:id="@+id/txtDefinicion"
-        android:layout_centerVertical="true"
+        android:text="Definicion:"
+        android:id="@+id/lblDefinicion"
+        android:layout_marginBottom="73dp"
+        android:layout_above="@+id/lblReferencia"
         android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Referencia"
-        android:id="@+id/txtReferencia"
+        android:text="Referencia:"
+        android:id="@+id/lblReferencia"
         android:layout_marginBottom="77dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtModificar"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtNombre"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/txtModificar" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtDefinicion"
+        android:layout_alignTop="@+id/lblDefinicion"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="29dp"
+        android:layout_alignEnd="@+id/txtNombre" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtReferencia"
+        android:layout_alignTop="@+id/lblReferencia"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
