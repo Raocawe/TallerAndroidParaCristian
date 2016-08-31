@@ -64,4 +64,22 @@ public class PerPartida extends SqlLite{
         this.c.moveToNext();
         return Partidas;
     }
+    public ArrayList<Partida> TopCincoMejores() throws ParseException {
+        ArrayList<Partida>  partidas = new ArrayList<Partida>();
+        Partida partida;
+        this.seleccionar("SELECT TOP 5 * FROM Partida Order by PuntajePartida desc");
+        if(this.c.isAfterLast() == false)
+        {
+            partida = new Partida();
+            SimpleDateFormat formato = new SimpleDateFormat("yyyy/mm/dd hh:mm:ss");
+            partida.setFechaPartidaN(formato.parse(c.getString(2)));
+            partida.setIdUP(c.getInt(0));
+            partida.setIdPartida(c.getInt(3));
+            partida.setPuntajePartida(c.getInt(1));
+            partidas.add(partida);
+            this.c.moveToNext();
+        }
+        this.c.close();
+        return partidas;
+    }
 }
