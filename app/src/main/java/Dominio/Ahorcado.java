@@ -82,10 +82,10 @@ public class Ahorcado {
         return pp.guardar(p,pContext);
     }
 
-    public ArrayList<Palabra> SeleccionarPorNivelPalabra(String x, Context pContext)
+    public ArrayList<Palabra> SeleccionarPorNivelCantLetras(int pint, Context pContext)
     {
         Palabra pp = new Palabra();
-        return pp.SeleccionarPorNivel(x,pContext);
+        return pp.SeleccionarPorNivel(pint,pContext);
     }
 
     public boolean ModificarPalabra(Palabra p, Context pContext)

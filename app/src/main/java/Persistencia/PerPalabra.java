@@ -19,26 +19,26 @@ public class PerPalabra extends SqlLite {
     {
         boolean retorno = false;
         if(p != null) {
-            this.ejecutarSentencia("INSERT INTO Palabra (NombreP,DescripcionP,Nivel,ReferenciaP) " + "VALUES " +
-                    "('" + p.getNombreP() + "', '" + p.getDescripcionP() + "', " + p.getNivel() + ", '" + p.getReferenciaP() + "')");
+            this.ejecutarSentencia("INSERT INTO Palabra (NombreP,DescripcionP,CantidadLetras,ReferenciaP) " + "VALUES " +
+                    "('" + p.getNombreP() + "', '" + p.getDescripcionP() + "', " + p.getCantidadLetras() + ", '" + p.getReferenciaP() + "')");
         retorno = true;
         }
         return retorno;
     }
 
-    public ArrayList<Palabra> SeleccionarPorNivel(String x)
+    public ArrayList<Palabra> SeleccionarPorNivel(int pint)
     {
         Palabra palabra;
         ArrayList<Palabra> Palabras = new ArrayList<Palabra>();
         //Lo retornado se asigna al cursor que se encuantra en SQLite
-        this.seleccionar("SELECT * FROM Palabra where Nivel = "+ x);
+        this.seleccionar("SELECT * FROM Palabra where CantidadLetras = "+ pint);
         while(this.c.isAfterLast() == false)
         {
             palabra = new Palabra();
             palabra.setIdP(c.getInt(4));
             palabra.setNombreP(c.getString(0));
             palabra.setDescripcionP(c.getString(1));
-            palabra.setNivel(c.getInt(2));
+            palabra.setCantidadLetras(c.getInt(2));
             palabra.setReferenciaP(c.getString(3));
             Palabras.add(palabra);
             this.c.moveToNext();
@@ -54,7 +54,7 @@ public class PerPalabra extends SqlLite {
         {
             this.ejecutarSentencia("UPDATE Palabra SET NombreP = '" + p.getNombreP() +
                     "', DescripcionP = '" + p.getDescripcionP() +
-                    "', Nivel = " + p.getNivel() +
+                    "', CantidadLetras = " + p.getCantidadLetras() +
                     ", ReferenciaP = '" + p.getReferenciaP() + "' WHERE NombreP = '" + p.getNombreP() + "')");
             retorno = true;
         }

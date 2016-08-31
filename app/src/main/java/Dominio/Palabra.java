@@ -11,16 +11,16 @@ public class Palabra {
     private int IdP;
     private String NombreP;
     private String DescripcionP;
-    private int Nivel;
+    private int CantidadLetras;
     private String ReferenciaP;
     public Context context;
 
-    public Palabra(int pIdP,String pNombreP,String pDescripcionP,int pNivel,String pReferenciaP)
+    public Palabra(int pIdP,String pNombreP,String pDescripcionP,int pCantidadLetras,String pReferenciaP)
     {
         this.IdP = pIdP;
         this.NombreP = pNombreP;
         this.DescripcionP = pDescripcionP;
-        this.Nivel = pNivel;
+        this.CantidadLetras = pCantidadLetras;
         this.ReferenciaP = pReferenciaP;
     }
 
@@ -58,12 +58,12 @@ public class Palabra {
         ReferenciaP = referenciaP;
     }
 
-    public int getNivel() {
-        return Nivel;
+    public int getCantidadLetras() {
+        return CantidadLetras;
     }
 
-    public void setNivel(int nivel) {
-        Nivel = nivel;
+    public void setCantidadLetras(int CantidadLetras) {
+        CantidadLetras = CantidadLetras;
     }
 
     public boolean guardar(Palabra p,Context pContext)
@@ -71,10 +71,10 @@ public class Palabra {
         PerPalabra pp = new PerPalabra(pContext);
         return pp.guardar(p);
     }
-    public ArrayList<Palabra> SeleccionarPorNivel(String x,Context pContext)
+    public ArrayList<Palabra> SeleccionarPorNivel(int pint,Context pContext)
     {
         PerPalabra pp = new PerPalabra(pContext);
-        return pp.SeleccionarPorNivel(x);
+        return pp.SeleccionarPorNivel(pint);
     }
     public boolean ModificarPalabra(Palabra p,Context pContext)
     {
@@ -86,18 +86,5 @@ public class Palabra {
     {
         PerPalabra pp = new PerPalabra(pContext);
         return pp.existePalabra(p);
-    }
-
-    public int DevolverLevel (Palabra pPalabra)
-    {
-        int retorno = -1;
-        int aux = pPalabra.getNombreP().toString().length();
-
-        switch (aux)
-        {
-            case aux = 4
-
-        }
-        return retorno;
     }
 }
