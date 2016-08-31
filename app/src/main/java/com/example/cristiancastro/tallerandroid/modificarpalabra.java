@@ -13,16 +13,19 @@ import Dominio.Palabra;
 public class modificarpalabra extends AppCompatActivity {
 
     Context MiContext;
+    TextView PalabraAModificar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modificarpalabra);
         MiContext = getApplicationContext();
+        PalabraAModificar = (TextView) findViewById(R.id.txtPalabra);
     }
 
     public void Enviar(View e)
     {
         if (ValidarCampos()) {
+
             TextView Palabra = (TextView) findViewById(R.id.txtPalabra);
             TextView Referencia = (TextView) findViewById(R.id.lblReferencia);
             TextView Descripcion = (TextView) findViewById(R.id.txtDescripcion);
@@ -31,19 +34,20 @@ public class modificarpalabra extends AppCompatActivity {
             pal.setNombreP(Palabra.getText().toString());
             pal.setReferenciaP(Referencia.getText().toString());
             pal.setDescripcionP(Descripcion.getText().toString());
+            //pal.setNivel(Descripcion.getText().toString());
 
             Ahorcado ahorcado = new Ahorcado();
 
             if (ahorcado.ExistePalabra(pal,MiContext)) {
-                Toast.makeText(MiContext, "Ya existe esa Palabra", Toast.LENGTH_SHORT).show();
+                ahorcado.ModificarPalabra(pal,MiContext);
+                Toast.makeText(MiContext, "Palabra Modificada", Toast.LENGTH_SHORT).show();
             } else {
-                ahorcado.guardarPalabra(pal,MiContext);
-                Toast.makeText(MiContext, "Palabra Agregada", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MiContext, "Palabra No Encontrada", Toast.LENGTH_SHORT).show();
             }
         }
         else
         {
-            Toast.makeText(MiContext, "Completar todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MiContext, "Completar Todos los Campos", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -53,7 +57,7 @@ public class modificarpalabra extends AppCompatActivity {
         TextView Referencia = (TextView) findViewById(R.id.lblReferencia);
         TextView Descripcion = (TextView) findViewById(R.id.txtDescripcion);
 
-        return (!Palabra.getText().toString().isEmpty() && !Referencia.getText().toString().isEmpty()
-                && !Descripcion.getText().toString().isEmpty());
+        return (!PalabraAModificar.getText().toString().isEmpty() && !Palabra.getText().toString().isEmpty() && !Referencia.getText().toString().isEmpty() &&
+                !Descripcion.getText().toString().isEmpty());
     }
 }

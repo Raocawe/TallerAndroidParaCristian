@@ -87,4 +87,17 @@ public class Palabra {
         PerPalabra pp = new PerPalabra(pContext);
         return pp.existePalabra(p);
     }
+
+    public int DevolverLevel (Palabra pPalabra)
+    {
+        int retorno = -1;
+        int aux = pPalabra.getNombreP().toString().length();
+
+        switch (aux)
+        {
+            case aux = 4
+
+        }
+        return retorno;
+    }
 }
