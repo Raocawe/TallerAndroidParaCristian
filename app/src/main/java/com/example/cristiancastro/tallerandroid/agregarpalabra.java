@@ -29,8 +29,8 @@ public class agregarpalabra extends AppCompatActivity {
 
             Palabra pal = new Palabra();
             pal.setNombreP(Palabra.getText().toString());
-            pal.setReferenciaP(Palabra.getText().toString());
-            pal.setDescripcionP(Palabra.getText().toString());
+            pal.setReferenciaP(Referencia.getText().toString());
+            pal.setDescripcionP(Descripcion.getText().toString());
 
             Ahorcado ahorcado = new Ahorcado();
 
