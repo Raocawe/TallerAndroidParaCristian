@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import Dominio.Ahorcado;
+import Dominio.UsuarioPrivado;
 import Dominio.UsuarioPublico;
 import Persistencia.SqlLite;
 
@@ -45,7 +46,14 @@ public class Maininicio extends AppCompatActivity {
             TextView Usuario = (TextView) findViewById(R.id.txtUsuario);
             TextView Contraseña = (TextView) findViewById(R.id.txtContraseña);
 
-            if(Usuario.getText().toString() == "admin" && Contraseña.getText().toString() == "1")
+            Ahorcado ahorcado = new Ahorcado();
+            UsuarioPrivado upr = new UsuarioPrivado();
+
+            upr.setContraseñaU(Contraseña.getText().toString());
+            upr.setUsuarioU(Usuario.getText().toString());
+            upr = ahorcado.SeleccionarEspecificaUsuarioPrivado(upr,MiContext);
+
+            if(upr != null)
             {
                 try {
                     Class<?> clase = Class.forName("com.example.cristiancastro.tallerandroid.loginadmin");
@@ -58,7 +66,6 @@ public class Maininicio extends AppCompatActivity {
             }
             else
             {
-                Ahorcado ahorcado = new Ahorcado();
                 UsuarioPublico up = new UsuarioPublico();
 
                 up.setContraseñaU(Contraseña.getText().toString());

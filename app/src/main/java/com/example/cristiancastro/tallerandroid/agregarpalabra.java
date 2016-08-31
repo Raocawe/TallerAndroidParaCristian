@@ -19,12 +19,12 @@ public class agregarpalabra extends AppCompatActivity {
         MiContext = getApplicationContext();
     }
 
-    public void Enviar(View e)
+    public void AgregarPalabra(View e)
     {
         if (ValidarCampos()) {
             TextView Palabra = (TextView) findViewById(R.id.txtPalabra);
-            TextView Referencia = (TextView) findViewById(R.id.lblReferencia);
-            TextView Descripcion = (TextView) findViewById(R.id.txtDescripcion);
+            TextView Referencia = (TextView) findViewById(R.id.txtReferencia);
+            TextView Descripcion = (TextView) findViewById(R.id.txtDefinicion);
 
             Palabra pal = new Palabra();
             pal.setNombreP(Palabra.getText().toString());
@@ -50,7 +50,7 @@ public class agregarpalabra extends AppCompatActivity {
     {
         TextView Palabra = (TextView) findViewById(R.id.txtPalabra);
         TextView Referencia = (TextView) findViewById(R.id.lblReferencia);
-        TextView Descripcion = (TextView) findViewById(R.id.txtDescripcion);
+        TextView Descripcion = (TextView) findViewById(R.id.txtDefinicion);
 
         return (!Palabra.getText().toString().isEmpty() && !Referencia.getText().toString().isEmpty()
         && !Descripcion.getText().toString().isEmpty());

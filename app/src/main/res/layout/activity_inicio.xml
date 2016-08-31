@@ -16,8 +16,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageButton"
         android:layout_gravity="center_horizontal"
-        android:onClick="Jugar"
-         />
+        android:onClick="Jugar" />
 
     <ImageButton
         android:layout_width="wrap_content"

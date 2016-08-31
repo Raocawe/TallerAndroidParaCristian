@@ -27,5 +27,5 @@
         android:id="@+id/btnActualizarPalabras"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:onClick="Modificaralabra"/>
+        android:onClick="ModificarPalabra"/>
 </RelativeLayout>

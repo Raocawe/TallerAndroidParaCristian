@@ -28,7 +28,7 @@ public class modificarpalabra extends AppCompatActivity {
 
             TextView Palabra = (TextView) findViewById(R.id.txtPalabra);
             TextView Referencia = (TextView) findViewById(R.id.lblReferencia);
-            TextView Descripcion = (TextView) findViewById(R.id.txtDescripcion);
+            TextView Descripcion = (TextView) findViewById(R.id.txtDefinicion);
 
             Dominio.Palabra pal = new Palabra();
             pal.setNombreP(Palabra.getText().toString());
@@ -55,7 +55,7 @@ public class modificarpalabra extends AppCompatActivity {
     {
         TextView Palabra = (TextView) findViewById(R.id.txtPalabra);
         TextView Referencia = (TextView) findViewById(R.id.lblReferencia);
-        TextView Descripcion = (TextView) findViewById(R.id.txtDescripcion);
+        TextView Descripcion = (TextView) findViewById(R.id.txtDefinicion);
 
         return (!PalabraAModificar.getText().toString().isEmpty() && !Palabra.getText().toString().isEmpty() && !Referencia.getText().toString().isEmpty() &&
                 !Descripcion.getText().toString().isEmpty());
