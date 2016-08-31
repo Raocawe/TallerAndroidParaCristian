@@ -42,28 +42,43 @@ public class Maininicio extends AppCompatActivity {
     {
         if(ValidarEntrada())
         {
-        TextView Usuario = (TextView) findViewById(R.id.txtUsuario);
-        TextView Contraseña = (TextView) findViewById(R.id.txtContraseña);
-        Ahorcado ahorcado = new Ahorcado();
-        UsuarioPublico up = new UsuarioPublico();
+            TextView Usuario = (TextView) findViewById(R.id.txtUsuario);
+            TextView Contraseña = (TextView) findViewById(R.id.txtContraseña);
 
-        up.setContraseñaU(Contraseña.getText().toString());
-        up.setUsuarioU(Usuario.getText().toString());
+            if(Usuario.getText().toString() == "admin" && Contraseña.getText().toString() == "1")
+            {
+                try {
+                    Class<?> clase = Class.forName("com.example.cristiancastro.tallerandroid.loginadmin");
+                    Intent i = new Intent(this, clase);
+                    startActivity(i);
 
-        up = ahorcado.SeleccionarEspecificaUsuarioPublico(up,MiContext);
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+            else
+            {
+                Ahorcado ahorcado = new Ahorcado();
+                UsuarioPublico up = new UsuarioPublico();
 
-            if (up != null) {
-                        try {
-                            Class<?> clase = Class.forName("com.example.cristiancastro.tallerandroid.inicio");
-                            Intent i = new Intent(this, clase);
-                            i.putExtra("Usuario", up.getIdUP());
-                            startActivity(i);
+                up.setContraseñaU(Contraseña.getText().toString());
+                up.setUsuarioU(Usuario.getText().toString());
 
-                        } catch (ClassNotFoundException e) {
-                            e.printStackTrace();
-                        }
-            } else {
-                Toast.makeText(MiContext, "Usuario o Contraseña Incorrecto", Toast.LENGTH_SHORT).show();
+                up = ahorcado.SeleccionarEspecificaUsuarioPublico(up,MiContext);
+
+                if (up != null) {
+                    try {
+                        Class<?> clase = Class.forName("com.example.cristiancastro.tallerandroid.inicio");
+                        Intent i = new Intent(this, clase);
+                        i.putExtra("Usuario", up.getIdUP());
+                        startActivity(i);
+
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Toast.makeText(MiContext, "Usuario o Contraseña Incorrecto", Toast.LENGTH_SHORT).show();
+                }
             }
         }
         else
