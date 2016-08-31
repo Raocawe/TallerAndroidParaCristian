@@ -34,7 +34,7 @@ public class modificarpalabra extends AppCompatActivity {
             pal.setNombreP(Palabra.getText().toString());
             pal.setReferenciaP(Referencia.getText().toString());
             pal.setDescripcionP(Descripcion.getText().toString());
-            //pal.setNivel(Descripcion.getText().toString());
+            pal.setCantidadLetras(Palabra.getText().toString().length());
 
             Ahorcado ahorcado = new Ahorcado();
 

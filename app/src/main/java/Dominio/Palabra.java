@@ -87,4 +87,65 @@ public class Palabra {
         PerPalabra pp = new PerPalabra(pContext);
         return pp.existePalabra(p);
     }
+
+    public int LevelDevuelveCantLetras (int pLevel)
+    {
+        switch (pLevel)
+        {
+            case 1:
+                return 4;
+            case 2:
+                return 4;
+            case 3:
+                return 5;
+            case 4:
+                return 5;
+            case 5:
+                return 6;
+            case 6:
+                return 6;
+            case 7:
+                return 7;
+            case 8:
+                return 7;
+            case 9:
+                return 8;
+            case 10:
+                return 8;
+            case 11:
+                return 8;
+            default:
+                return -1;
+        }
+    }
+    public String LevelDevuelveReferencias (int pLevel)
+    {
+        switch (pLevel)
+        {
+            case 1:
+                return "Referencia";
+            case 2:
+                return "Palabra";
+            case 3:
+                return "Referencia";
+            case 4:
+                return "Palabra";
+            case 5:
+                return "Referencia";
+            case 6:
+                return "Palabra";
+            case 7:
+                return "Referencia";
+            case 8:
+                return "Palabra";
+            case 9:
+                return "Referencia";
+            case 10:
+                return "Palabra";
+            case 11:
+                return "Ninguna";
+            default:
+                return "";
+        }
+    }
 }
