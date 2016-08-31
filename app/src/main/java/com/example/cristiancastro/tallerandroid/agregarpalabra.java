@@ -28,27 +28,32 @@ public class agregarpalabra extends AppCompatActivity {
             TextView Descripcion = (TextView) findViewById(R.id.txtDescripcion);
 
             Palabra pal = new Palabra();
-            pal.setNombreP(Palabra.toString());
-            pal.setReferenciaP(Palabra.toString());
-            pal.setDescripcionP(Palabra.toString());
+            pal.setNombreP(Palabra.getText().toString());
+            pal.setReferenciaP(Referencia.getText().toString());
+            pal.setDescripcionP(Descripcion.getText().toString());
 
             Ahorcado ahorcado = new Ahorcado();
 
             if (ahorcado.ExistePalabra(pal,MiContext)) {
-                Toast.makeText(getApplicationContext(), "Ya existe esa Palabra", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MiContext, "Ya existe esa Palabra", Toast.LENGTH_SHORT).show();
             } else {
                 ahorcado.guardarPalabra(pal,MiContext);
-                Toast.makeText(getApplicationContext(), "Usuario Agregado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MiContext, "Usuario Agregado", Toast.LENGTH_SHORT).show();
             }
         }
         else
         {
-            Toast.makeText(getApplicationContext(), "Completar todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MiContext, "Completar todos los campos", Toast.LENGTH_SHORT).show();
         }
     }
 
     public boolean ValidarCampos()
     {
-        return (findViewById(R.id.txtPalabra).toString() != "" && findViewById(R.id.txtDescripcion).toString() != "" && findViewById(R.id.txtReferencia).toString() != "");
+        TextView Palabra = (TextView) findViewById(R.id.txtPalabra);
+        TextView Referencia = (TextView) findViewById(R.id.txtReferencia );
+        TextView Descripcion = (TextView) findViewById(R.id.txtDescripcion);
+
+        return (!Palabra.getText().toString().isEmpty() && !Referencia.getText().toString().isEmpty()
+        && !Descripcion.getText().toString().isEmpty());
     }
 }

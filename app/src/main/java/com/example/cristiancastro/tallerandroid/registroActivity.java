@@ -48,15 +48,14 @@ public class registroActivity extends AppCompatActivity {
                 up.setEdadUP(Integer.parseInt(Edad.getText().toString()));
 
                 ahorcado.guardarUsuarioPublico(up,Micontext);
-                Toast.makeText(getApplicationContext(), "Usuario Agregado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Micontext, "Usuario Agregado", Toast.LENGTH_SHORT).show();
             }
         }//asdsd
         else
         {
-            Toast.makeText(getApplicationContext(), "Completar todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Micontext, "Completar todos los campos", Toast.LENGTH_SHORT).show();
         }
     }
-////////////////////////////////////////////////////////////////////////////////////////////////////7
     public boolean ValidarCampos()
     {
         TextView Nombre = (TextView) findViewById(R.id.txtNombre);

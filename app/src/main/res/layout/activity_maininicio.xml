@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageButton5"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/entrar"
+
         android:onClick="Enviar"
         android:adjustViewBounds="true" />
 
