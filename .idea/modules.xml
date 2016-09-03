@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TallerAndroid.iml" filepath="$PROJECT_DIR$/TallerAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dsadsa.iml" filepath="$PROJECT_DIR$/dsadsa.iml" />
     </modules>
   </component>
 </project>
