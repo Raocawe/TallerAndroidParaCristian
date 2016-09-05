@@ -19,11 +19,13 @@ import Persistencia.SqlLite;
 public class Maininicio extends AppCompatActivity {
 
     Context MiContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maininicio);
         MiContext = getApplicationContext();
+        Trabajando();
     }
 
     public void Registro(View v)
@@ -102,4 +104,17 @@ public class Maininicio extends AppCompatActivity {
         return !Usuario.getText().toString().isEmpty() && !Contraseña.getText().toString().isEmpty();
     }
 
+    public void Trabajando()
+    {
+        try
+        {
+            Class<?> clase = Class.forName("com.example.cristiancastro.tallerandroid.partidaActivity");
+            Intent i = new Intent(this, clase);
+            i.putExtra("Usuario", 2);
+            startActivity(i);
+        }
+        catch(ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }

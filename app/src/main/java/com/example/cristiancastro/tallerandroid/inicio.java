@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.test.suitebuilder.annotation.LargeTest;
+import android.view.View;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -33,7 +34,7 @@ public class inicio extends AppCompatActivity {
 
     }
 
-    public void Jugar() throws IOException
+    public void Jugar(View v) throws IOException
     {
         try{
             Class<?> clase = Class.forName("com.example.cristiancastro.tallerandroid.partidaActivity");
@@ -47,7 +48,7 @@ public class inicio extends AppCompatActivity {
         }
     }
 
-    public void Salir() throws IOException
+    public void Salir(View v) throws IOException
     {
         try{
             Class<?> clase = Class.forName("com.example.cristiancastro.tallerandroid.Maininicio");
@@ -60,7 +61,7 @@ public class inicio extends AppCompatActivity {
         }
     }
 
-    public void MPU() throws IOException
+    public void MPU(View v) throws IOException
     {
         try{
             Class<?> clase = Class.forName("com.example.cristiancastro.tallerandroid.mejorespuntajesusuario");
@@ -74,7 +75,7 @@ public class inicio extends AppCompatActivity {
         }
     }
 
-    public void MPC() throws IOException
+    public void MPC(View v) throws IOException
     {
         try{
             Class<?> clase = Class.forName("com.example.cristiancastro.tallerandroid.mejorespuntajescelular");

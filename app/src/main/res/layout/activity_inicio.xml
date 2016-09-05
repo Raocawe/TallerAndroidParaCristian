@@ -11,38 +11,37 @@
         android:id="@+id/lblBienvenida"
         android:layout_gravity="center_horizontal" />
 
-    <ImageButton
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
+        android:text="Jugar"
+        android:id="@+id/btnJugar"
         android:layout_gravity="center_horizontal"
-        android:onClick="Jugar" />
+        android:onClick="Jugar"/>
 
-    <ImageButton
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton2"
+        android:text="MPU"
+        android:id="@+id/btnmpu"
         android:layout_gravity="center_horizontal"
+        android:onClick="MPU"/>
 
-        android:onClick="MPU"
-        android:layout_marginTop="20dp" />
-
-    <ImageButton
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton3"
+        android:text="MPC"
+        android:id="@+id/btnmpc"
         android:layout_gravity="center_horizontal"
+        android:onClick="MPC"/>
 
-        android:onClick="MPC"
-        android:layout_marginTop="20dp" />
-
-    <ImageButton
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton4"
+        android:text="SALIR"
+        android:id="@+id/btnSalir"
         android:layout_gravity="center_horizontal"
-
-        android:layout_marginTop="20dp" />
+        android:onClick="Salir"/>
 
 
 </LinearLayout>
