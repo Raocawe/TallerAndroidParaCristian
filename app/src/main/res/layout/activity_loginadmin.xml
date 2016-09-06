@@ -10,22 +10,21 @@
     tools:context="com.example.cristiancastro.tallerandroid.loginadmin"
     android:id="@+id/sss">
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Crear Palabras"
-        android:id="@+id/btnCrearPalabras"
-        android:layout_marginTop="85dp"
+        android:id="@+id/imageButton"
+        android:src="@drawable/agp"
+        android:onClick="CrearPalabra"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="CrearPalabra" />
+        android:layout_centerHorizontal="true" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Actualizar Palabras"
-        android:id="@+id/btnActualizarPalabras"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="ModificarPalabra"/>
+        android:id="@+id/imageButton2"
+        android:src="@drawable/modp"
+        android:onClick="ModificarPalabra"
+        android:layout_below="@+id/imageButton"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
