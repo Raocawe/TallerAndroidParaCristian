@@ -10,7 +10,10 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Chronometer;
 
+import java.util.Date;
+
 import Dominio.Ahorcado;
+import Dominio.Partida;
 import Dominio.UsuarioPublico;
 
 public class partidaActivity extends AppCompatActivity {
@@ -19,7 +22,7 @@ public class partidaActivity extends AppCompatActivity {
     UsuarioPublico u;
     Context MiContext;
     Chronometer crono;
-    long time = 60000;
+    Ahorcado ahorcado;
 
     @TargetApi(Build.VERSION_CODES.N)
     @Override
@@ -34,9 +37,25 @@ public class partidaActivity extends AppCompatActivity {
         crono.start();
 
         b = getIntent().getExtras();
-        Ahorcado aho = new Ahorcado();
+        ahorcado = new Ahorcado();
         u = new UsuarioPublico();
         u.setIdUP(b.getInt("Usuario"));
-        u = aho.SeleccionarEspecificaUsuarioPublicoPorId(u,MiContext);
+        u = ahorcado.SeleccionarEspecificaUsuarioPublicoPorId(u,MiContext);
+    }
+
+    public boolean FinalizarPartida()
+    {
+        java.util.Date fecha = new Date();
+        Partida newP = new Partida();
+
+        newP.setIdUP(u.getIdUP());
+        newP.setFechaPartidaN(fecha);
+        ///newP.setPuntajePartida();
+
+        if(ahorcado.guardarPartida(newP,MiContext))
+        {
+            return true;
+        }
+        return false;
     }
 }
