@@ -75,14 +75,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agregar"
-        android:id="@+id/btnEnviar"
-        android:layout_below="@+id/txtDefinicion"
-        android:layout_centerHorizontal="true"
-        android:onClick="AgregarPalabra"/>
+        android:id="@+id/imageButton3"
+        android:src="@drawable/agregarp"
+        android:onClick="AgregarPalabra"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/lblReferencia"
+        android:background="#00ffffff" />
 
 </RelativeLayout>

@@ -13,11 +13,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Palabra a Modificar:"
-        android:id="@+id/textView5"
+        android:text="Agregar Palabra"
+        android:id="@+id/textView6"
+        android:layout_marginTop="50dp"
+        android:textSize="40dp"
+        android:textColor="#04B486"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -81,14 +83,13 @@
         android:layout_marginTop="30dp"
         android:layout_alignParentEnd="true" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Modificar"
-        android:id="@+id/btnEnviar"
-        android:layout_marginTop="38dp"
-        android:layout_below="@+id/txtReferencia"
-        android:layout_centerHorizontal="true"
-        android:onClick="Enviar"/>
+        android:id="@+id/imageButton4"
+        android:src="@drawable/modificarp"
+        android:onClick="Enviar"
+        android:background="#00ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

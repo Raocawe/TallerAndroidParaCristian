@@ -17,7 +17,9 @@
         android:src="@drawable/agp"
         android:onClick="CrearPalabra"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#00ffffff"
+        android:layout_marginTop="30dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -26,5 +28,7 @@
         android:src="@drawable/modp"
         android:onClick="ModificarPalabra"
         android:layout_below="@+id/imageButton"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#00ffffff"
+        android:layout_marginTop="100dp" />
 </RelativeLayout>
